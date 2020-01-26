@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+##
+#
+##
+
+set -e
+
+hint="use one of this command: 'fetch'"
+
+case "$1" in
+    fetch|get|curl)
+        neo run bin:fetch "${@:2}" ;;
+    *)
+        echo "Unknown command '$1', ${hint}." ;;
+esac
